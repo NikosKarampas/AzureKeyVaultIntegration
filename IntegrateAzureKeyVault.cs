@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -22,13 +23,13 @@ namespace Company.Function
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var cosmosDBConnectionString = _cosmosDbOptions.ConnectionString;
-            var cosmosDBAccessKey = _cosmosDbOptions.AccessKey;
+            var cosmosDBConnectionString = _cosmosDbOptions.CosmosConnectionString;
+            var cosmosDBAccessKey = _cosmosDbOptions.CosmosAccessKey;
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
-            response.WriteString("Welcome to Azure Functions!");
+            response.WriteString($"Connection string is {cosmosDBConnectionString} and access key is {cosmosDBAccessKey}");
 
             return response;
         }

@@ -2,7 +2,7 @@ namespace Company.Function
 {
     public class CosmosDBOptions
     {
-        public string ConnectionString { get; set; }
-        public string AccessKey { get; set; }
+        public string CosmosConnectionString { get; set; }
+        public string CosmosAccessKey { get; set; }
     }
 }
