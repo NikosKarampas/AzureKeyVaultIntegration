@@ -28,7 +28,6 @@ namespace Company.Function
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-
             response.WriteString($"Connection string is {cosmosDBConnectionString} and access key is {cosmosDBAccessKey}");
 
             return response;
